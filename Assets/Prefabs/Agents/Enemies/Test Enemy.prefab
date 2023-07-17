@@ -148,3 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentType: 1
   agentName: Agent Smith
+  HasHealth: 0
+  MaxHealth: 50
+  CurrentHealth: 25
+  UI_HealthSlider: {fileID: 0}

@@ -151,6 +151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentType: 0
   agentName: Neo
+  HasHealth: 1
+  MaxHealth: 50
+  CurrentHealth: 50
+  UI_HealthSlider: {fileID: 0}
 --- !u!114 &6876808901542886565
 MonoBehaviour:
   m_ObjectHideFlags: 0
