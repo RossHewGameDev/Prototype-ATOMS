@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 980097634990303338}
   - component: {fileID: 3917153681599562786}
   - component: {fileID: 7364775394989399892}
+  - component: {fileID: 3505221209886098374}
   m_Layer: 0
   m_Name: Test Enemy
   m_TagString: Untagged
@@ -148,7 +149,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentType: 1
   agentName: Agent Smith
-  HasHealth: 0
+  HasHealth: 1
   MaxHealth: 50
-  CurrentHealth: 25
+  CurrentHealth: 50
   UI_HealthSlider: {fileID: 0}
+--- !u!114 &3505221209886098374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4438023472978227004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c921708410c4b7b4d957a9d6bb893af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 0}
