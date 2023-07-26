@@ -157,6 +157,8 @@ MonoBehaviour:
   MaxHealth: 50
   CurrentHealth: 50
   UI_HealthSlider: {fileID: 0}
+  HealthBar_Prefab: {fileID: 702510172052057061, guid: 709fff8d366138a4b95d7ed57e9c1837,
+    type: 3}
 --- !u!114 &6876808901542886565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c921708410c4b7b4d957a9d6bb893af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 0}
+  UItoTrack: {fileID: 0}
 --- !u!1001 &5762916197813206119
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3707362924820896050
 MeshFilter:
@@ -154,6 +154,8 @@ MonoBehaviour:
   MaxHealth: 50
   CurrentHealth: 50
   UI_HealthSlider: {fileID: 0}
+  HealthBar_Prefab: {fileID: 702510172052057061, guid: 709fff8d366138a4b95d7ed57e9c1837,
+    type: 3}
 --- !u!114 &3505221209886098374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c921708410c4b7b4d957a9d6bb893af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 0}
+  UItoTrack: {fileID: 0}
 --- !u!114 &4404364911493694889
 MonoBehaviour:
   m_ObjectHideFlags: 0

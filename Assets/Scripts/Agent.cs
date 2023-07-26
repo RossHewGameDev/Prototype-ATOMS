@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 public class Agent : MonoBehaviour
@@ -12,7 +13,7 @@ public class Agent : MonoBehaviour
     }
     // Essential Controllers //
 
-    UICommands uICommands;
+    UITracker _UITracker;
 
 
     //                       //
@@ -26,23 +27,28 @@ public class Agent : MonoBehaviour
     public int MaxHealth;
     public int CurrentHealth;
 
-    [Header("TEMP")]
-    public Slider UI_HealthSlider; // assign slider here... 
-                                  // Would be nice to just have healthbars be a part of the whole guy prefab, 
-                                 // not sure how to best go about that right now.
+    [SerializeField] Slider UI_HealthSlider; // debug view
+
+    public GameObject HealthBar_Prefab;
+
 
 
     //Private Variables:
     private bool healthSetupValid
     {
-        get { return HasHealth && UI_HealthSlider != null; }
+        get { return HasHealth; }
     }
 
+    private GameObject healthBarParent;
 
     private void Start()
     {
+
+
         if (healthSetupValid)
         {
+            healthBarParent = GameObject.Find("HealthBarsParent");
+            InstantiateHealthBar(healthBarParent.transform);
             UI_HealthSetup(UI_HealthSlider, MaxHealth, CurrentHealth);
         }
     }
@@ -72,7 +78,14 @@ public class Agent : MonoBehaviour
         return agentType;
     }
 
-
+    private void InstantiateHealthBar(Transform UI_HealthParent)
+    {
+        _UITracker = GetComponent<UITracker>();  // Assigning Tracker
+        GameObject myHealthBar = Instantiate(HealthBar_Prefab, UI_HealthParent); // Creating Health bar
+        myHealthBar.gameObject.name = "Health Bar - " + agentName;// Giving Health bar agent name
+        UI_HealthSlider = myHealthBar.GetComponent<Slider>();    // assigning UI slider for agent
+        _UITracker.UItoTrack = myHealthBar;                     // assigning health bar to UI to game tracking.
+    }
 
 
 

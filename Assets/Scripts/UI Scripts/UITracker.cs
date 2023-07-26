@@ -6,7 +6,7 @@ using UnityEngine;
 public class UITracker : UICommands
 {
 
-    [SerializeField] GameObject UI;
+    public GameObject UItoTrack;
     GameObject cameraObject;
     Camera _camera;
      
@@ -20,6 +20,6 @@ public class UITracker : UICommands
 
     void Update()
     {
-        UIFollowObject(gameObject, UI, _camera);
+        UIFollowObject(gameObject, UItoTrack, _camera);
     }
 }
