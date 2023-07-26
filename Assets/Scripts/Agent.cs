@@ -67,6 +67,11 @@ public class Agent : MonoBehaviour
         _HealthSlider.value = _CurrentHealth;
     }
 
+    public AgentType ReturnAgentType() 
+    {
+        return agentType;
+    }
+
 
 
 

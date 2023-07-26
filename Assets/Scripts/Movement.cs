@@ -19,10 +19,23 @@ public class Movement : MonoBehaviour
 
     private Rigidbody _rb;
 
-    private void Start()
+    Agent _agent;
+    Agent.AgentType _agentType;
+
+    GameObject _nextTarget;
+
+    private void Awake()
     {
+        _agent = GetComponent<Agent>();
         _rb = GetComponent<Rigidbody>();
     }
+
+    private void Start()
+    {        
+        _agentType = _agent.ReturnAgentType(); //Assign agent type
+        AcquireTarget();
+        CanMove = true;
+    } 
 
     void FixedUpdate()
     {
@@ -37,6 +50,8 @@ public class Movement : MonoBehaviour
     /// </summary>
     public void MoveTowardsTarget()
     {
+        movementTarget = _nextTarget.transform; //Movement target becomes current target
+
         if (Vector3.Distance(_rb.position, movementTarget.position ) > StoppingDistance)
         {
             _rb.AddForce(FindDirectionVector() * Speed);
@@ -55,6 +70,25 @@ public class Movement : MonoBehaviour
         return dir.normalized;
     }
 
+    /// <summary>
+    /// Find target depending on this agents type
+    /// </summary>
+    private void AcquireTarget()
+    {
+        switch (_agentType) 
+        {
+            case Agent.AgentType.Ally:
+                _nextTarget = FindObjectOfType<Agent>().gameObject;
+                break;
+            case Agent.AgentType.Enemy:
+                _nextTarget = GameObject.Find("Test Ally");
+                break;
+            default:
+                _nextTarget = movementTarget.gameObject;
+                break;
+
+        }
+    }
 
 
 }
