@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TestMelee : Attack
 {
+    // not where we create weapons. We'll create a scriptable object for that.
+    string weaponName = "Test Melee"; 
 
     void Update()
     {
@@ -31,13 +33,10 @@ public class TestMelee : Attack
     /// <param name="collider"></param>
     private void TargetSelect(Collider collider)
     {
-        if (collider != null)
+        if (collider != null && collider.CompareTag("Agent"))
         {
             GetAgentProperties(collider.gameObject);
-        }
-        else
-        {
-            GetAgentProperties(null);
+            Debug.LogWarning("Target for " + weaponName + ": " + collider.name);
         }
     }
 

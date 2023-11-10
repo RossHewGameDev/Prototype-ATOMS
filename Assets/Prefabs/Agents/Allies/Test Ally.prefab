@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4317677890611403391}
   m_Layer: 0
   m_Name: Test Ally
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,6 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9201466999803742961}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -37,7 +38,6 @@ Transform:
   m_Children:
   - {fileID: 3325583742275593397}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &217621201021695965
 MeshFilter:
@@ -201,6 +201,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2501142833516714991, guid: 9b8c3adf8b1fecf47b1f7c0ddaa9509b,
+        type: 3}
+      propertyPath: agent
+      value: 
+      objectReference: {fileID: 4460858470245031291}
     - target: {fileID: 3948345258163300006, guid: 9b8c3adf8b1fecf47b1f7c0ddaa9509b,
         type: 3}
       propertyPath: m_Name

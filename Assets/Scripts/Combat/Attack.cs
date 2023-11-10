@@ -23,11 +23,30 @@ public class Attack : MonoBehaviour
     /// <param name="agentParent"></param>
     public void GetAgentProperties(GameObject agentParent)
     {
-        agent = agentParent.GetComponent<Agent>();
+        if (agentParent != null)
+        {
+            agent = agentParent.GetComponent<Agent>();
+        }
+        else
+        {
+            Debug.LogWarning("No Agent for GetAgentProperties");
+        }
+
     }
 
+
+
+    /// <summary>
+    /// Damages the agent that the weapon is locked onto. 
+    /// Move this to agent's responsibility? (reduce agent health and add agent heatlh on agent?)
+    /// </summary>
+    /// <param name="damage"></param>
     public void DamageAgent(int damage)
     {
-        agent.CurrentHealth -= damage;
+        if (agent != null)
+        {
+            agent.CurrentHealth -= damage;
+        }
+
     }
 }
