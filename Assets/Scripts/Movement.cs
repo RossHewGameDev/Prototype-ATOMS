@@ -17,22 +17,22 @@ public class Movement : MonoBehaviour
 
     public Transform movementTarget;
 
+
+
     private Rigidbody _rb;
-
-    Agent _agent;
-    Agent.AgentType _agentType;
-
-    GameObject _nextTarget;
+    private Creature _creature;
+    private Creature.Team _creatureTeam;
+    private GameObject _nextTarget;
 
     private void Awake()
     {
-        _agent = GetComponent<Agent>();
+        _creature = GetComponent<Creature>();
         _rb = GetComponent<Rigidbody>();
     }
 
     private void Start()
-    {        
-        _agentType = _agent.ReturnAgentType(); //Assign agent type
+    {
+        _creatureTeam = _creature.team;
         AcquireTarget();
         CanMove = true;
     } 
@@ -75,12 +75,12 @@ public class Movement : MonoBehaviour
     /// </summary>
     private void AcquireTarget()
     {
-        switch (_agentType) 
+        switch (_creatureTeam) 
         {
-            case Agent.AgentType.Ally:
-                _nextTarget = FindObjectOfType<Agent>().gameObject;
+            case Creature.Team.Ally:
+                _nextTarget = FindObjectOfType<Creature>().gameObject;
                 break;
-            case Agent.AgentType.Enemy:
+            case Creature.Team.Enemy:
                 _nextTarget = GameObject.Find("Test Ally");
                 break;
             default:

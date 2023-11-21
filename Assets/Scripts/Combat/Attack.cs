@@ -15,7 +15,7 @@ public class Attack : MonoBehaviour
     public WeaponType WeaponRange;
     public int Damage;
 
-    [SerializeField] Agent agent; // Serialised for debugging view.
+    [SerializeField] Creature agent; // Serialised for debugging view.
  
     /// <summary>
     /// Grabs the agent component of this gameobject.
@@ -25,7 +25,7 @@ public class Attack : MonoBehaviour
     {
         if (agentParent != null)
         {
-            agent = agentParent.GetComponent<Agent>();
+            agent = agentParent.GetComponent<Creature>();
         }
         else
         {
@@ -45,7 +45,7 @@ public class Attack : MonoBehaviour
     {
         if (agent != null)
         {
-            agent.CurrentHealth -= damage;
+            agent.currentHealth -= damage;
         }
 
     }

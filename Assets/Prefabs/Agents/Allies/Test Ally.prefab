@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8559789021136205773}
   - component: {fileID: 5163966729083785538}
   - component: {fileID: 4460858470245031291}
+  - component: {fileID: 3069278804567849886}
   - component: {fileID: 6876808901542886565}
   - component: {fileID: 4317677890611403391}
   m_Layer: 0
@@ -151,12 +152,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc80c749590d1d34cac1204aa6190007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentType: 0
-  agentName: Neo
-  HasHealth: 1
-  MaxHealth: 50
-  CurrentHealth: 50
+  team: 0
+  cr_Name: Neo
+  maxHealth: 10
+  currentHealth: 0
+  speed: 1
+  weapon: 
+--- !u!114 &3069278804567849886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201466999803742961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9d29479e4c82f4e85a526cbe2d0dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   UI_HealthSlider: {fileID: 0}
+  HasHealth: 1
   HealthBar_Prefab: {fileID: 702510172052057061, guid: 709fff8d366138a4b95d7ed57e9c1837,
     type: 3}
 --- !u!114 &6876808901542886565

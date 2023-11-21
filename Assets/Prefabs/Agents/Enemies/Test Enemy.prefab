@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 980097634990303338}
   - component: {fileID: 3917153681599562786}
   - component: {fileID: 7364775394989399892}
+  - component: {fileID: 7133844841009108517}
   - component: {fileID: 3505221209886098374}
   - component: {fileID: 4404364911493694889}
   m_Layer: 0
@@ -148,12 +149,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc80c749590d1d34cac1204aa6190007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentType: 1
-  agentName: Agent Smith
-  HasHealth: 1
-  MaxHealth: 50
-  CurrentHealth: 50
+  team: 0
+  cr_Name: Smith
+  maxHealth: 10
+  currentHealth: 0
+  speed: 1
+  weapon: 
+--- !u!114 &7133844841009108517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4438023472978227004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9d29479e4c82f4e85a526cbe2d0dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   UI_HealthSlider: {fileID: 0}
+  HasHealth: 1
   HealthBar_Prefab: {fileID: 702510172052057061, guid: 709fff8d366138a4b95d7ed57e9c1837,
     type: 3}
 --- !u!114 &3505221209886098374
